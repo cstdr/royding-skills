@@ -9,6 +9,19 @@ description: Use when a pregnant user needs a daily meal plan, grocery list, or 
 
 Plans daily meals for pregnant women, targeting critical prenatal nutrients with safe foods. Outputs a night-before reminder format.
 
+## Cross-Platform Path Convention
+
+数据文件路径由 `$PREGNANCY_SKILL_DIR` 环境变量决定。
+
+| 平台 | 默认路径 |
+|------|---------|
+| OpenClaw | `~/.openclaw/` |
+| Claude Code | `~/.claude/` |
+| Codex | `~/.codex/` |
+| 其他 | `~/pregnancy-skill/` |
+
+如果 `$PREGNENCY_SKILL_DIR` 未设定，agent 应使用自己平台的默认数据目录。
+
 ## When to Use
 
 **主动触发 — 当用户提到以下任何关键词，立即加载此 skill：**
