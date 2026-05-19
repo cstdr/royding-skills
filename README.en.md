@@ -22,10 +22,12 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 |---------|-------------|
 | User profile | Trimester, due date, taste preferences, allergies, doctor notes |
 | Daily plan | 3 meals + snacks, each dish mapped to prenatal nutrients |
+| Meal timing guide | Standard times: 7:30 breakfast / 12:00 lunch / 18:00 dinner |
 | Grocery list | Organized by produce / meat / dairy / grains / fruit |
 | History tracking | Rolling 3-week log, no major repeats |
 | Personal dish library | Add favorites anytime, auto-prioritized in future plans |
 | 6 life phases | Auto-detects: preparing/pregnancy(1st/2nd/3rd trimester)/postpartum/normal |
+| Morning sickness guide | Early pregnancy: small frequent meals, dry-wet separation, soda crackers |
 | Medical conditions | Gestational diabetes→lowGI / Anemia→iron boost / Weight→low-oil |
 
 **⚕️ Evidence-Based Medicine (EBM) Principle:**
@@ -52,7 +54,7 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 
 **Safety screening:**
 - Absolute avoid: raw meat, high-mercury fish, alcohol, unpasteurized dairy
-- Listeria hazards: cold smoked fish, soft cheeses, leftovers,反复开封的冰淇淋
+- Listeria hazards: cold smoked fish, soft cheeses, leftovers, repeated freeze-thaw cycles
 - Caffeine cap: 200mg/day (no tea/bubble tea on coffee days)
 - Artificial sweeteners trigger insulin → choose plain yogurt + fresh fruit
 
