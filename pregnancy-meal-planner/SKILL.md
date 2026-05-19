@@ -1,6 +1,11 @@
 ---
 name: pregnancy-meal-planner
-description: Use when a pregnant user needs a daily meal plan, grocery list, or nutrition reminders, especially for night-before planning.
+description: Plans daily meals for pregnant women with prenatal nutrition tracking, grocery lists, and trimester-specific guidance. Use when a pregnant user asks about food, meals, nutrition, or what to eat tomorrow.
+license: MIT
+compatibility: Works with Claude Code, Codex, OpenCode, OpenClaw, and any Agent Skills-compatible agent.
+metadata:
+  author: cstdr
+  version: "1.0"
 ---
 
 # Pregnancy Meal Planner
