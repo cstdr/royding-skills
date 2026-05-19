@@ -30,8 +30,9 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 
 **⚕️ Evidence-Based Medicine (EBM) Principle:**
 - All dish recommendations backed by reliable nutrition data (USDA/Nutrients database)
-- Proactively debunks myths: bone soup for calcium, red dates for iron, "shape-to-organ" folk logic
+- Proactively debunks myths: bone broth for calcium, red dates for iron, "shape-to-organ" folk logic
 - Real nutrient data with absorption rate comparisons (heme iron vs non-heme iron)
+- New food safety topics: Listeria prevention, artificial sweeteners, iron-calcium timing
 
 **How to trigger:**
 ```
@@ -49,7 +50,11 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 
 **Nutrients covered:** Folate (from dark leafy greens, not tomatoes), Iron (heme-first: liver/blood/red meat), Calcium (dairy/tofu/sesame, not bone broth), DHA, Iodine, Vitamin D, Choline, Zinc
 
-**Safety screening:** Auto-excludes raw meat, high-mercury fish, alcohol, unpasteurized dairy
+**Safety screening:**
+- Absolute avoid: raw meat, high-mercury fish, alcohol, unpasteurized dairy
+- Listeria hazards: cold smoked fish, soft cheeses, leftovers,反复开封的冰淇淋
+- Caffeine cap: 200mg/day (no tea/bubble tea on coffee days)
+- Artificial sweeteners trigger insulin → choose plain yogurt + fresh fruit
 
 **Myth-busting — proactive corrections:**
 
@@ -59,6 +64,7 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 | Red dates/sugar for iron | Animal blood, liver, red meat |
 | Tomatoes for folate | Dark leafy greens (20x denser) |
 | "Drink soup, skip meat" | Eat the meat, soup is optional |
+| Sugar-free yogurt is healthier | Artificial sweeteners spike insulin — plain yogurt + fruit |
 
 **Platform support:**
 
