@@ -28,6 +28,11 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 | 6 life phases | Auto-detects: preparing/pregnancy(1st/2nd/3rd trimester)/postpartum/normal |
 | Medical conditions | Gestational diabetes→lowGI / Anemia→iron boost / Weight→low-oil |
 
+**⚕️ Evidence-Based Medicine (EBM) Principle:**
+- All dish recommendations backed by reliable nutrition data (USDA/Nutrients database)
+- Proactively debunks myths: bone soup for calcium, red dates for iron, "shape-to-organ" folk logic
+- Real nutrient data with absorption rate comparisons (heme iron vs non-heme iron)
+
 **How to trigger:**
 ```
 明天吃什么？
@@ -42,9 +47,18 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 帮我安装这个 skill：https://github.com/cstdr/royding-skills/pregnancy-meal-planner
 ```
 
-**Nutrients covered:** Folate, Iron, Calcium, DHA, Iodine, Vitamin D, Choline, Zinc
+**Nutrients covered:** Folate (from dark leafy greens, not tomatoes), Iron (heme-first: liver/blood/red meat), Calcium (dairy/tofu/sesame, not bone broth), DHA, Iodine, Vitamin D, Choline, Zinc
 
 **Safety screening:** Auto-excludes raw meat, high-mercury fish, alcohol, unpasteurized dairy
+
+**Myth-busting — proactive corrections:**
+
+| ❌ Myth | ✅ Correct |
+|--------|-----------|
+| Bone broth for calcium | Dairy, tofu, sesame |
+| Red dates/sugar for iron | Animal blood, liver, red meat |
+| Tomatoes for folate | Dark leafy greens (20x denser) |
+| "Drink soup, skip meat" | Eat the meat, soup is optional |
 
 **Platform support:**
 
@@ -109,6 +123,10 @@ A menu pool requires pre-maintaining a large dish database, takes significant ef
 **Why phase differentiation driven by profile instead of hardcoded?**
 
 There are 6 life phases (preparing/1st/2nd/3rd trimester/postpartum/normal). Phase changes over time. Hardcoding in the prompt means updating the skill every time. Profile-driven logic means the agent auto-calculates current phase from `currentWeek`, `isPlanningPregnancy`, and `postpartumWeek` — the skill itself stays stable.
+
+**Why emphasize Evidence-Based Medicine?**
+
+Pregnancy nutrition is riddled with pseudoscience — bone broth for calcium, red dates for iron, "eat shape for shape" folk logic. This skill proactively debunks these myths and backs every recommendation with real nutrient data, so bad nutrition advice doesn't reach pregnant users.
 
 ---
 
