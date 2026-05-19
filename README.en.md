@@ -2,6 +2,8 @@
 
 Personal AI Agent Skills.
 
+[中文](./README.md)
+
 ## Skills
 
 ### pregnancy-meal-planner
@@ -101,10 +103,6 @@ Agents natively read/write local files. JSON is lightweight, requires no depende
 **Why "check history" instead of "build a menu pool"?**
 
 A menu pool requires pre-maintaining a large dish database, takes significant effort to keep fresh, and can't adapt to changing preferences. The history approach uses actual consumption data — "what you ate before determines what you won't eat next." It's more accurate with zero maintenance overhead.
-
-**Why 3 weeks and not longer?**
-
-2 weeks creates a noticeable repeat gap; beyond 4 weeks, data volume grows but marginal returns diminish. 3 weeks is an empirical sweet spot — enough variety, manageable data size.
 
 **Why trimester differentiation driven by profile instead of hardcoded?**
 
