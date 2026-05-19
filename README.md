@@ -2,6 +2,9 @@
 
 个人 AI Agent Skills 仓库。
 
+![Version](https://img.shields.io/badge/version-1.3-blue?style=flat-square)
+![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--19-green?style=flat-square)
+
 [English](./README.en.md)
 
 ## Skills
