@@ -25,7 +25,7 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 | Grocery list | Organized by produce / meat / dairy / grains / fruit |
 | History tracking | Rolling 3-week log, no major repeats |
 | Personal dish library | Add favorites anytime, auto-prioritized in future plans |
-| Trimester modes | 1st=nausea relief / 2nd=iron+calcium+DHA / 3rd=limit salt |
+| 6 life phases | Auto-detects: preparing/pregnancy(1st/2nd/3rd trimester)/postpartum/normal |
 | Medical conditions | Gestational diabetes→lowGI / Anemia→iron boost / Weight→low-oil |
 
 **How to trigger:**
@@ -72,6 +72,8 @@ $PREGNANCY_SKILL_DIR/
 {
   "currentWeek": 20,
   "dueDate": "2026-09-15",
+  "isPlanningPregnancy": false,
+  "postpartumWeek": null,
   "preferences": { "likes": [], "dislikes": [] },
   "doctorAdvice": { "gestationalDiabetes": false, "anemia": false }
 }
@@ -104,9 +106,9 @@ Agents natively read/write local files. JSON is lightweight, requires no depende
 
 A menu pool requires pre-maintaining a large dish database, takes significant effort to keep fresh, and can't adapt to changing preferences. The history approach uses actual consumption data — "what you ate before determines what you won't eat next." It's more accurate with zero maintenance overhead.
 
-**Why trimester differentiation driven by profile instead of hardcoded?**
+**Why phase differentiation driven by profile instead of hardcoded?**
 
-Trimester changes over time. Hardcoding it in the prompt means updating the skill every time. Profile-driven logic means the user just says "I'm now in week 28" and the agent reads the updated state — the skill itself stays stable.
+There are 6 life phases (preparing/1st/2nd/3rd trimester/postpartum/normal). Phase changes over time. Hardcoding in the prompt means updating the skill every time. Profile-driven logic means the agent auto-calculates current phase from `currentWeek`, `isPlanningPregnancy`, and `postpartumWeek` — the skill itself stays stable.
 
 ---
 

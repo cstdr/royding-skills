@@ -25,7 +25,7 @@
 | 采购清单 | 按蔬菜/肉类/蛋奶/谷物/水果分组 |
 | 历史查重 | 滚动保留 3 周记录，主菜不重复 |
 | 个人菜品库 | 喜欢吃什么随时加，优先排入计划 |
-| 孕周适配 | 孕早期止吐/孕中期铁钙DHA/孕晚期控盐防水肿 |
+| 6 阶段自动适配 | 备孕/孕早/孕中/孕晚/月子/正常，自动切换配餐策略 |
 | 特殊情况 | 妊娠糖尿病→控糖、贫血→补铁、增重过快→控油 |
 
 **支持的触发方式：**
@@ -72,6 +72,8 @@ $PREGNANCY_SKILL_DIR/
 {
   "currentWeek": 20,
   "dueDate": "2026-09-15",
+  "isPlanningPregnancy": false,
+  "postpartumWeek": null,
   "preferences": { "likes": [], "dislikes": [] },
   "doctorAdvice": { "gestationalDiabetes": false, "anemia": false }
 }
@@ -104,9 +106,9 @@ Agent 的核心能力是读写本地文件，JSON 足够轻量且无需额外依
 
 菜单库的问题是：需要预先维护大量菜品，准备时间长，且无法适应用户口味变化。查历史的方案核心思路是"你实际吃过什么"来决定"下次不吃什么"——数据来源于真实消费记录，比预设菜单库更准确，也省去了维护成本。
 
-**为什么孕周差异化靠 profile 驱动而不是写死？**
+**为什么差异化靠 profile 驱动而不是写死？**
 
-孕周是动态变化的，写死在 prompt 里会导致每次都要改 skill。而 profile 驱动只需要用户说"我孕周变了"，agent 自动读取最新状态，skill 本身保持稳定。
+孕期分 6 个阶段（备孕/孕早/孕中/孕晚/月子/正常），阶段是动态变化的。写死在 prompt 里会导致每次都要改 skill。而 profile 驱动让 agent 自动根据 `currentWeek`、`isPlanningPregnancy`、`postpartumWeek` 计算当前阶段，skill 本身保持稳定。
 
 ---
 
