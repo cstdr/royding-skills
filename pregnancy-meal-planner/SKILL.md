@@ -61,6 +61,8 @@ Plans daily meals for pregnant women, targeting critical prenatal nutrients with
   "lastUpdated": "2026-05-19",
   "currentWeek": 20,
   "dueDate": "2026-09-15",
+  "isPlanningPregnancy": false,
+  "postpartumWeek": null,
   "preferences": {
     "likes": ["粤菜", "清淡口味"],
     "dislikes": ["辛辣", "太油腻"],
@@ -77,6 +79,31 @@ Plans daily meals for pregnant women, targeting critical prenatal nutrients with
 ```
 
 3. 后续调用时，**先读取此文件**，根据用户状态个性化配餐。
+
+### 自动阶段检测
+
+每次生成饮食计划前，agent 必须先判断用户处于哪个阶段：
+
+```
+判断顺序：
+1. 如果 isPlanningPregnancy == true → 备孕阶段
+2. 如果 postpartumWeek >= 1 && postpartumWeek <= 4 → 月子期间
+3. 如果 currentWeek >= 1 && currentWeek <= 12 → 孕早期
+4. 如果 currentWeek >= 13 && currentWeek <= 27 → 孕中期
+5. 如果 currentWeek >= 28 → 孕晚期
+6. 其他 → 正常
+```
+
+**各阶段配餐重点：**
+
+| 阶段 | 判断条件 | 配餐重点 |
+|------|---------|---------|
+| 备孕阶段 | `isPlanningPregnancy: true` | 叶酸+铁+碘，提前储备营养 |
+| 孕早期 | 1 ≤ week ≤ 12 | 少食多餐止吐、叶酸为主、碘加强 |
+| 孕中期 | 13 ≤ week ≤ 27 | 铁+钙+DHA 大幅增加 |
+| 孕晚期 | week ≥ 28 | 蛋白质维持、钙继续补、控盐防水肿 |
+| 月子期间 | 1 ≤ postpartumWeek ≤ 4 | 蛋白质修复、补血、铁、钙 |
+| 正常 | 其他 | 均衡饮食、维持体重 |
 
 ### 状态变更
 
@@ -238,22 +265,25 @@ Plans daily meals for pregnant women, targeting critical prenatal nutrients with
 
 ## 配餐原则
 
-1. **每餐必有蛋白质** — 胎儿需要氨基酸
+1. **每餐必有蛋白质** — 胎儿/身体需要氨基酸
 2. **每天一种深绿叶菜** — 叶酸主力
 3. **每天一种富铁食物** — 预防孕中晚期贫血
-4. **每天一种富钙食物** — 胎儿骨骼发育
+4. **每天一种富钙食物** — 骨骼发育/骨质维护
 5. **omega-3 每周 2-3次** — 三文鱼/鲈鱼/秋刀鱼
 6. **少食多餐** — 孕晚期胃被压迫，正餐七分饱
 
-## 孕周差异化配餐
+## 阶段差异化配餐
 
-根据用户当前孕周调整重点：
+根据自动检测出的阶段调整配餐重点：
 
-| 孕周 | 阶段 | 配餐重点 |
-|------|------|----------|
-| 1-12周 | 孕早期 | 少食多餐止吐、叶酸为主、碘加强 |
-| 13-27周 | 孕中期 | 铁和钙大幅增加、DHA加量 |
-| 28-40周 | 孕晚期 | 蛋白质维持、钙继续补、控盐防水肿 |
+| 阶段 | 判断依据 | 配餐重点 |
+|------|---------|---------|
+| 备孕阶段 | `isPlanningPregnancy: true` | 叶酸400μg/天、铁、碘；提前储备营养 |
+| 孕早期 | 1 ≤ week ≤ 12 | 少食多餐止吐、叶酸为主、碘加强 |
+| 孕中期 | 13 ≤ week ≤ 27 | 铁+钙+DHA 大幅增加 |
+| 孕晚期 | week ≥ 28 | 蛋白质维持、钙继续补、控盐防水肿 |
+| 月子期间 | 1 ≤ postpartumWeek ≤ 4 | 高蛋白、补血、铁、钙；汤类易吸收 |
+| 正常 | 其他 | 均衡饮食、维持体重 |
 
 **特殊医生建议优先：**
 - 妊娠糖尿病 → 控碳水、选择低GI食材、避免甜食
