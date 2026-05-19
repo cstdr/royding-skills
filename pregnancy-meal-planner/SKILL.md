@@ -25,7 +25,7 @@ Plans daily meals for pregnant women, targeting critical prenatal nutrients with
 | Codex | `~/.codex/` |
 | 其他 | `~/pregnancy-skill/` |
 
-如果 `$PREGNENCY_SKILL_DIR` 未设定，agent 应使用自己平台的默认数据目录。
+如果 `$PREGNANCY_SKILL_DIR` 未设定，agent 应使用自己平台的默认数据目录。
 
 ## When to Use
 
