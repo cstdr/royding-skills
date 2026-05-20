@@ -3,7 +3,7 @@
 Personal AI Agent Skills.
 
 ![Version](https://img.shields.io/badge/version-1.3-blue?style=flat-square)
-![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--19-green?style=flat-square)
+![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--20-green?style=flat-square)
 
 [中文](./README.md)
 
@@ -32,6 +32,19 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 | 6 life phases | Auto-detects: preparing/pregnancy(1st/2nd/3rd trimester)/postpartum/normal |
 | Morning sickness guide | Early pregnancy: small frequent meals, dry-wet separation, soda crackers |
 | Medical conditions | Gestational diabetes→lowGI / Anemia→iron boost / Weight→low-oil |
+
+### Screenshots
+
+![Installation](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/1-install.png)
+*Installation and loading*
+
+![First-time setup](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/2-setup.png)
+*Initial configuration: collecting pregnancy state*
+
+![Daily meal plan](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/3-daily-plan.png)
+*Daily meal plan output*
+
+---
 
 **⚕️ Evidence-Based Medicine (EBM) Principle:**
 - All dish recommendations backed by reliable nutrition data (USDA/Nutrients database)
