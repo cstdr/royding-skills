@@ -3,7 +3,7 @@
 个人 AI Agent Skills 仓库。
 
 ![Version](https://img.shields.io/badge/version-1.3-blue?style=flat-square)
-![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--19-green?style=flat-square)
+![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--20-green?style=flat-square)
 
 [English](./README.en.md)
 
@@ -32,6 +32,19 @@
 | 6 阶段自动适配 | 备孕/孕早/孕中/孕晚/月子/正常，自动切换配餐策略 |
 | 孕吐专项指导 | 孕早期少食多餐、干湿分离、苏打饼干等友好食材 |
 | 特殊情况 | 妊娠糖尿病→控糖、贫血→补铁、增重过快→控油 |
+
+### 截图展示
+
+![安装](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/1-install.png)
+*安装与加载*
+
+![首次配置](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/2-setup.png)
+*首次配置：收集孕期状态*
+
+![每日菜谱](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/3-daily-plan.png)
+*每日饮食计划输出*
+
+---
 
 **⚕️ 循证医学原则：**
 - 所有食材推荐基于可靠营养学数据（USDA/Nutrients 等权威数据库）
