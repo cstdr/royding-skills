@@ -2,8 +2,8 @@
 
 Personal AI Agent Skills.
 
-![Version](https://img.shields.io/badge/version-1.3-blue?style=flat-square)
-![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--20-green?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.4-blue?style=flat-square)
+![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--21-green?style=flat-square)
 
 [中文](./README.md)
 
