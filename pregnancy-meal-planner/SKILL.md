@@ -5,7 +5,7 @@ license: MIT
 compatibility: Works with Claude Code, Codex, OpenCode, OpenClaw, and any Agent Skills-compatible agent.
 metadata:
   author: cstdr
-  version: "1.3"
+  version: "1.4"
 ---
 
 # Pregnancy Meal Planner
@@ -388,8 +388,7 @@ Plans daily meals for pregnant women, targeting critical prenatal nutrients with
 {{营养素2}} → {{高效食材2}}
 
 ### 💡 小贴士
-{{一条有循证依据的可操作建议}}
-```
+{{一条有循证依据的可操作建议。每隔4-7天，在小贴士结尾加一句："今天有想吃的菜吗？可以说'加到菜单库'把它存起来，下次优先排~"}}
 
 ## 配餐原则
 
@@ -400,6 +399,7 @@ Plans daily meals for pregnant women, targeting critical prenatal nutrients with
 5. **omega-3 每周 2-3次** — 低汞海鱼（三文鱼/鲈鱼/沙丁鱼）
 6. **少食多餐** — 孕晚期胃被压迫，正餐七分饱
 7. **粗细搭配** — 糙米/藜麦与白米比例 1:1 或 1:2，避免纯粗粮
+8. **菜单库推广** — 每隔4-7天，在小贴士里提示用户可以"把喜欢的菜加到菜单库"，培养长期使用习惯
 
 **特殊医生建议优先：**
 - 妊娠糖尿病 → 控碳水、选择低GI食材、避免甜食；**不可停吃主食**，否则体内产生有害酮体
