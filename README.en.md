@@ -2,12 +2,14 @@
 
 Personal AI Agent Skills.
 
-![Version](https://img.shields.io/badge/version-1.4-blue?style=flat-square)
-![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--21-green?style=flat-square)
-
 [中文](./README.md)
 
 ## Skills
+
+| Skill | Purpose | Use case | Install |
+| --- | --- | --- | --- |
+| `pregnancy-meal-planner` | Pregnancy daily meal plan + grocery list + nutrition mapping | "What should I eat tomorrow?" / weekly menu planning | `Help me install this skill: https://github.com/cstdr/royding-skills/pregnancy-meal-planner` |
+| `usb-mac-recovery` | Zero-data-loss recovery when macOS refuses to mount a USB drive | "Mac won't read my USB" / grey drive / `Invalid argument` | `Help me install this skill: https://github.com/cstdr/royding-skills/usb-mac-recovery` |
 
 ### pregnancy-meal-planner
 
@@ -25,32 +27,11 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 |---------|-------------|
 | User profile | Trimester, due date, taste preferences, allergies, doctor notes |
 | Daily plan | 3 meals + snacks, each dish mapped to prenatal nutrients |
-| Meal timing guide | Standard times: 7:30 breakfast / 12:00 lunch / 18:00 dinner |
 | Grocery list | Organized by produce / meat / dairy / grains / fruit |
 | History tracking | Rolling 3-week log, no major repeats |
 | Personal dish library | Add favorites anytime, auto-prioritized in future plans |
 | 6 life phases | Auto-detects: preparing/pregnancy(1st/2nd/3rd trimester)/postpartum/normal |
-| Morning sickness guide | Early pregnancy: small frequent meals, dry-wet separation, soda crackers |
 | Medical conditions | Gestational diabetes→lowGI / Anemia→iron boost / Weight→low-oil |
-
-### Screenshots
-
-![Installation](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/1-install.png)
-*Installation and loading*
-
-![First-time setup](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/2-setup.png)
-*Initial configuration: collecting pregnancy state*
-
-![Daily meal plan](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/3-daily-plan.png)
-*Daily meal plan output*
-
----
-
-**⚕️ Evidence-Based Medicine (EBM) Principle:**
-- All dish recommendations backed by reliable nutrition data (USDA/Nutrients database)
-- Proactively debunks myths: bone broth for calcium, red dates for iron, "shape-to-organ" folk logic
-- Real nutrient data with absorption rate comparisons (heme iron vs non-heme iron)
-- New food safety topics: Listeria prevention, artificial sweeteners, iron-calcium timing
 
 **How to trigger:**
 ```
@@ -66,23 +47,9 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 帮我安装这个 skill：https://github.com/cstdr/royding-skills/pregnancy-meal-planner
 ```
 
-**Nutrients covered:** Folate (from dark leafy greens, not tomatoes), Iron (heme-first: liver/blood/red meat), Calcium (dairy/tofu/sesame, not bone broth), DHA, Iodine, Vitamin D, Choline, Zinc
+**Nutrients covered:** Folate, Iron, Calcium, DHA, Iodine, Vitamin D, Choline, Zinc
 
-**Safety screening:**
-- Absolute avoid: raw meat, high-mercury fish, alcohol, unpasteurized dairy
-- Listeria hazards: cold smoked fish, soft cheeses, leftovers, repeated freeze-thaw cycles
-- Caffeine cap: 200mg/day (no tea/bubble tea on coffee days)
-- Artificial sweeteners trigger insulin → choose plain yogurt + fresh fruit
-
-**Myth-busting — proactive corrections:**
-
-| ❌ Myth | ✅ Correct |
-|--------|-----------|
-| Bone broth for calcium | Dairy, tofu, sesame |
-| Red dates/sugar for iron | Animal blood, liver, red meat |
-| Tomatoes for folate | Dark leafy greens (20x denser) |
-| "Drink soup, skip meat" | Eat the meat, soup is optional |
-| Sugar-free yogurt is healthier | Artificial sweeteners spike insulin — plain yogurt + fruit |
+**Safety screening:** Auto-excludes raw meat, high-mercury fish, alcohol, unpasteurized dairy
 
 **Platform support:**
 
@@ -90,6 +57,52 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 ![Codex](https://img.shields.io/badge/Codex-Skill-10B981?style=flat-square&logo=openai&logoColor=white)
 ![OpenCode](https://img.shields.io/badge/OpenCode-Skill-3B82F6?style=flat-square)
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-8B5CF6?style=flat-square)
+
+### usb-mac-recovery
+
+**Read-only emergency data recovery** when macOS refuses to mount a USB drive. When `diskutil` sees the device but won't mount it (`Invalid argument` / `Volume Total Space: 0 B` / grey in Finder), and the same device reads fine on Windows / Android / Linux, this skill extracts files from a `dd` backup `.img` with **zero data loss**.
+
+**What it solves:**
+- macOS reports `Invalid argument` / `not mounted` / `Volume Total Space: 0 B`
+- Cross-device works (TV/Windows/Linux) but Mac won't read it
+- `fsck_msdos` exits 0 but `mount` fails (macOS driver is stricter than BSD `fsck`)
+- Confusion about whether to `dd` backup or just run `fsck_msdos -y`
+
+**Core features:**
+
+| Feature | Description |
+|---------|-------------|
+| 5-stage read-only flow | Diagnose → backup → cross-device verify → repair → software extract |
+| Zero-write guarantee | All repair/extract on `.img` copy; original disk untouched after `dd` backup |
+| Cross-device pivot | Android/Windows/Linux test decides fsck vs software-extract path |
+| pyfatfs + hand-rolled FAT32 parser | Falls back to manual BPB + FAT-chain traversal when pyfatfs fails |
+| Failure-mode cheat sheet | `Permission denied` / `(NO WRITE)` / "exit 0 ≠ success" and 7+ more |
+
+**How to trigger:**
+```
+Mac doesn't read my USB drive
+USB drive won't mount
+diskutil sees the drive but Mounted: No
+Invalid argument error
+Grey USB drive in Finder
+USB plays on TV but not on Mac
+I can't lose any data
+```
+
+**Install:**
+```
+Help me install this skill: https://github.com/cstdr/royding-skills/usb-mac-recovery
+```
+
+**Safety red lines** (never write to the original disk):
+- ⚠️ Never run `fsck_msdos -y` / `diskutil eraseDisk` / `diskutil repairVolume` on the original disk
+- ⚠️ Never `dd` write to the original disk (`of=` must be a file, not a device)
+- ⚠️ All repair/extract happens on the `.img` copy
+- ⚠️ `mountDisk` exit code 0 ≠ actually mounted; verify with `mount` / `ls /Volumes/`
+
+**Platform support:**
+
+![macOS](https://img.shields.io/badge/macOS-Skill-000000?style=flat-square&logo=apple&logoColor=white)
 
 ---
 
@@ -147,10 +160,6 @@ A menu pool requires pre-maintaining a large dish database, takes significant ef
 **Why phase differentiation driven by profile instead of hardcoded?**
 
 There are 6 life phases (preparing/1st/2nd/3rd trimester/postpartum/normal). Phase changes over time. Hardcoding in the prompt means updating the skill every time. Profile-driven logic means the agent auto-calculates current phase from `currentWeek`, `isPlanningPregnancy`, and `postpartumWeek` — the skill itself stays stable.
-
-**Why emphasize Evidence-Based Medicine?**
-
-Pregnancy nutrition is riddled with pseudoscience — bone broth for calcium, red dates for iron, "eat shape for shape" folk logic. This skill proactively debunks these myths and backs every recommendation with real nutrient data, so bad nutrition advice doesn't reach pregnant users.
 
 ---
 
