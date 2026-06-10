@@ -2,9 +2,6 @@
 
 个人 AI Agent Skills 仓库。
 
-![Version](https://img.shields.io/badge/version-1.4-blue?style=flat-square)
-![Last Updated](https://img.shields.io/badge/last%20updated-2026--05--21-green?style=flat-square)
-
 [English](./README.en.md)
 
 ## Skills
@@ -25,32 +22,11 @@
 |------|------|
 | 用户状态 | 孕周、预产期、口味偏好、过敏/忌口、医生建议 |
 | 每日计划 | 三餐+加餐，每道菜对应孕期营养 |
-| 建议用餐时间 | 标准化时间表（7:30早餐/12:00午餐/18:00晚餐等） |
 | 采购清单 | 按蔬菜/肉类/蛋奶/谷物/水果分组 |
 | 历史查重 | 滚动保留 3 周记录，主菜不重复 |
 | 个人菜品库 | 喜欢吃什么随时加，优先排入计划 |
 | 6 阶段自动适配 | 备孕/孕早/孕中/孕晚/月子/正常，自动切换配餐策略 |
-| 孕吐专项指导 | 孕早期少食多餐、干湿分离、苏打饼干等友好食材 |
 | 特殊情况 | 妊娠糖尿病→控糖、贫血→补铁、增重过快→控油 |
-
-### 截图展示
-
-![安装](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/1-install.png)
-*安装与加载*
-
-![首次配置](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/2-setup.png)
-*首次配置：收集孕期状态*
-
-![每日菜谱](https://raw.githubusercontent.com/cstdr/royding-skills/main/pregnancy-meal-planner/images/3-daily-plan.png)
-*每日饮食计划输出*
-
----
-
-**⚕️ 循证医学原则：**
-- 所有食材推荐基于可靠营养学数据（USDA/Nutrients 等权威数据库）
-- 主动纠错传统迷思：骨头汤补钙、红枣/红糖补血、以形补形等
-- 真实营养数据说话，附吸收率对比（血红素铁 vs 非血红素铁）
-- 新增李斯特菌/代糖/补铁间隔等食安知识点
 
 **支持的触发方式：**
 ```
@@ -66,23 +42,9 @@
 帮我安装这个 skill：https://github.com/cstdr/royding-skills/pregnancy-meal-planner
 ```
 
-**覆盖的营养素：** 叶酸、铁（血红素铁优先）、钙（奶制品/豆腐/芝麻，非骨头汤）、DHA、碘、维生素D、胆碱、锌
+**覆盖的营养素：** 叶酸、铁、钙、DHA、碘、维生素D、胆碱、锌
 
-**禁忌检查：**
-- 绝对避免：生肉、高汞鱼、酒精、未经巴氏消毒奶酪
-- 李斯特菌高危食物：冷熏鱼、软质奶酪、剩菜剩饭、反复开封的冰淇淋
-- 咖啡因每日上限 200mg（喝咖啡当天禁茶/奶茶/可乐）
-- 人工代糖刺激胰岛素分泌 → 选择原味酸奶+天然水果
-
-**伪科学误区主动纠错：**
-
-| ❌ 误区 | ✅ 正确做法 |
-|---------|-----------|
-| 骨头汤补钙 | 奶制品、北豆腐、芝麻 |
-| 红枣/红糖补血 | 动物血、肝脏、红肉 |
-| 番茄补叶酸 | 深绿叶菜（菠菜/苋菜）叶酸密度高20倍 |
-| 喝汤不吃肉 | 优先吃肉，汤适量 |
-| 无糖酸奶更健康 | 代糖刺激胰岛素，选择原味酸奶+水果 |
+**禁忌检查：** 自动排除生肉、高汞鱼、酒精、未经巴氏消毒的奶酪等孕期危险食物
 
 **平台支持：**
 
@@ -90,6 +52,52 @@
 ![Codex](https://img.shields.io/badge/Codex-Skill-10B981?style=flat-square&logo=openai&logoColor=white)
 ![OpenCode](https://img.shields.io/badge/OpenCode-Skill-3B82F6?style=flat-square)
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-8B5CF6?style=flat-square)
+
+### usb-mac-recovery
+
+macOS 拒挂 USB 存储时的**只读应急数据恢复**助手。当 `diskutil` 看到盘但不挂载（`Invalid argument` / `Volume Total Space: 0 B` / 灰盘），且同盘在 Windows / Android / Linux 能读时，从 `dd` 备份的 `.img` 副本里零数据丢失地提取文件。
+
+**解决的问题：**
+- macOS 报 `Invalid argument` / `not mounted` / `Volume Total Space: 0 B`
+- 跨设备（电视/Windows/Linux）能读但 Mac 不读
+- `fsck_msdos` 退出码 0 但 `mount` 失败（macOS 驱动比 BSD `fsck` 严格）
+- 不知道该 `dd` 备份还是直接 `fsck_msdos -y`
+
+**核心功能：**
+
+| 功能 | 说明 |
+|------|------|
+| 5 阶段只读流程 | 诊断 → 备份 → 跨设备验证 → 修复 → 软件提取 |
+| 零写入保证 | 所有修复/提取在 `.img` 副本上，原盘 `dd` 备份后一字节不动 |
+| 跨设备拐点判断 | Android/Windows/Linux 验证决定走 fsck 还是软件提取 |
+| pyfatfs + 手写 FAT32 解析器 | pyfatfs 失败时降级到 BPB 字段手算 + FAT 链追踪 |
+| 失败模式速查表 | `Permission denied` / `(NO WRITE)` / 退出码 0 ≠ 成功 等 7+ 坑 |
+
+**支持的触发方式：**
+```
+Mac 不读 U 盘
+U 盘插上不挂载
+diskutil 看到盘但 Mounted: No
+提示 Invalid argument
+Mac 灰盘
+U 盘在电视能放但 Mac 不能
+数据丢了不能接受
+```
+
+**安装：**
+```
+帮我安装这个 skill：https://github.com/cstdr/royding-skills/usb-mac-recovery
+```
+
+**安全红线**（绝不动原盘）：
+- ⚠️ 绝不在原盘上跑 `fsck_msdos -y` / `diskutil eraseDisk` / `diskutil repairVolume`
+- ⚠️ 绝不用 `dd` 写原盘（`of=` 必须是文件不是设备）
+- ⚠️ 所有修复/提取在 `.img` 副本上执行
+- ⚠️ `mountDisk` 退出码 0 ≠ 真挂载，必须用 `mount` / `ls /Volumes/` 验证
+
+**平台支持：**
+
+![macOS](https://img.shields.io/badge/macOS-Skill-000000?style=flat-square&logo=apple&logoColor=white)
 
 ---
 
@@ -147,10 +155,6 @@ Agent 的核心能力是读写本地文件，JSON 足够轻量且无需额外依
 **为什么差异化靠 profile 驱动而不是写死？**
 
 孕期分 6 个阶段（备孕/孕早/孕中/孕晚/月子/正常），阶段是动态变化的。写死在 prompt 里会导致每次都要改 skill。而 profile 驱动让 agent 自动根据 `currentWeek`、`isPlanningPregnancy`、`postpartumWeek` 计算当前阶段，skill 本身保持稳定。
-
-**为什么强调循证医学？**
-
-孕期营养领域伪科学盛行——骨头汤补钙、红枣补血、以形补形等错误观念广泛流传。本 skill 主动纠错，所有推荐附真实营养数据，不让伪科学影响孕期饮食决策。
 
 ---
 
