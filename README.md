@@ -6,6 +6,11 @@
 
 ## Skills
 
+| Skill | 目的 | 使用场景 | 安装方式 |
+| --- | --- | --- | --- |
+| `pregnancy-meal-planner` | 孕期每日饮食计划 + 采购清单 + 营养映射 | 明天吃什么？/这周菜单怎么排？ | `帮我安装这个 skill：https://github.com/cstdr/royding-skills/pregnancy-meal-planner` |
+| `usb-mac-recovery` | macOS 拒挂 USB 时的零数据丢失恢复 | Mac 不读 U 盘/灰盘/`Invalid argument` | `帮我安装这个 skill：https://github.com/cstdr/royding-skills/usb-mac-recovery` |
+
 ### pregnancy-meal-planner
 
 孕期食谱助手。每天晚上生成明日饮食计划 + 采购清单 + 营养映射。
