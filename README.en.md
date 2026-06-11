@@ -35,11 +35,11 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 
 **How to trigger:**
 ```
-明天吃什么？
-帮我规划这周菜单
-把这个菜加到菜单库
-我想吃酸的
-更新一下孕期状态
+What should I eat tomorrow?
+Help me plan this week's menu
+Add this dish to my menu library
+I'm craving something sour
+Update my pregnancy status
 ```
 
 **Install:**
