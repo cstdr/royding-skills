@@ -44,7 +44,7 @@ Night-before pregnancy meal planner. Daily meal plans, grocery lists, and prenat
 
 **Install:**
 ```
-帮我安装这个 skill：https://github.com/cstdr/royding-skills/pregnancy-meal-planner
+Help me install this skill: https://github.com/cstdr/royding-skills/pregnancy-meal-planner
 ```
 
 **Nutrients covered:** Folate, Iron, Calcium, DHA, Iodine, Vitamin D, Choline, Zinc
