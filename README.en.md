@@ -4,12 +4,20 @@ Personal AI Agent Skills.
 
 [中文](./README.md)
 
+<p align="left">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/cstdr/royding-skills?style=flat-square" alt="License"></a>
+  <img src="https://img.shields.io/github/last-commit/cstdr/royding-skills?style=flat-square" alt="Last commit">
+  <img src="https://img.shields.io/badge/skills-3-7c3aed?style=flat-square" alt="Skills">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs welcome">
+</p>
+
 ## Skills
 
 | Skill | Purpose | Use case | Install |
 | --- | --- | --- | --- |
 | `pregnancy-meal-planner` | Pregnancy daily meal plan + grocery list + nutrition mapping | "What should I eat tomorrow?" / weekly menu planning | `Help me install this skill: https://github.com/cstdr/royding-skills/pregnancy-meal-planner` |
 | `usb-mac-recovery` | Zero-data-loss recovery when macOS refuses to mount a USB drive | "Mac won't read my USB" / grey drive / `Invalid argument` | `Help me install this skill: https://github.com/cstdr/royding-skills/usb-mac-recovery` |
+| `github-repo-polish` | Polish a "runs locally but feels half-baked" repo into a "professionally maintained" public release (9 stages + 4 scripts) | "I'm open-sourcing this" / "preparing for public release" / "my commit history is a mess" | `Help me install this skill: https://github.com/cstdr/royding-skills/github-repo-polish` |
 
 ### pregnancy-meal-planner
 
@@ -103,6 +111,39 @@ Help me install this skill: https://github.com/cstdr/royding-skills/usb-mac-reco
 **Platform support:**
 
 ![macOS](https://img.shields.io/badge/macOS-Skill-000000?style=flat-square&logo=apple&logoColor=white)
+
+### github-repo-polish
+
+Polish a "runs locally but feels half-baked" repo into a "professionally maintained" public release. 9-stage workflow + 4 automated check scripts.
+
+**Problems it solves:**
+- README is still the default `# Project Name`, no idea where to start
+- Commit history full of `asdf` / `WIP` / `tmp`
+- Accidentally committed `.env` / API key to git
+- Want to add CI / Issue templates but don't know what standard to follow
+
+**9-stage workflow:**
+- Stage 0: collect "why I built this" (anti-AI-tell, must come from author)
+- Stage 1: privacy audit (gitleaks + git-filter-repo)
+- Stage 2: repo skeleton (.gitignore / LICENSE / structure)
+- Stage 3: commit history (conventional commits)
+- Stage 4: 7-section README architecture
+- Stage 5: .github/ engineering (Issue templates + CI)
+- Stage 6: screenshots / GIF / arch diagrams
+- Stage 7: personal info + human touch
+- Stage 8: pre-publish automated checklist
+
+**Install:**
+```
+Help me install this skill: https://github.com/cstdr/royding-skills/github-repo-polish
+```
+
+**Platform support:**
+
+![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97706?style=flat-square&logo=anthropic&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-Skill-10B981?style=flat-square&logo=openai&logoColor=white)
+![OpenCode](https://img.shields.io/badge/OpenCode-Skill-3B82F6?style=flat-square)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-8B5CF6?style=flat-square)
 
 ---
 

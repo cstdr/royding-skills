@@ -4,12 +4,20 @@
 
 [English](./README.en.md)
 
+<p align="left">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/cstdr/royding-skills?style=flat-square" alt="License"></a>
+  <img src="https://img.shields.io/github/last-commit/cstdr/royding-skills?style=flat-square" alt="Last commit">
+  <img src="https://img.shields.io/badge/skills-3-7c3aed?style=flat-square" alt="Skills">
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs welcome">
+</p>
+
 ## Skills
 
 | Skill | 目的 | 使用场景 | 安装方式 |
 | --- | --- | --- | --- |
 | `pregnancy-meal-planner` | 孕期每日饮食计划 + 采购清单 + 营养映射 | 明天吃什么？/这周菜单怎么排？ | `帮我安装这个 skill：https://github.com/cstdr/royding-skills/pregnancy-meal-planner` |
 | `usb-mac-recovery` | macOS 拒挂 USB 时的零数据丢失恢复 | Mac 不读 U 盘/灰盘/`Invalid argument` | `帮我安装这个 skill：https://github.com/cstdr/royding-skills/usb-mac-recovery` |
+| `github-repo-polish` | 把"能跑但像半成品"的仓库打磨成"专业人士觉得维护用心"的公开仓库(9 阶段 + 4 个脚本) | "我要开源了" / "准备公开仓库" / "提交历史太乱想整理" | `帮我安装这个 skill：https://github.com/cstdr/royding-skills/github-repo-polish` |
 
 ### pregnancy-meal-planner
 
@@ -103,6 +111,39 @@ U 盘在电视能放但 Mac 不能
 **平台支持：**
 
 ![macOS](https://img.shields.io/badge/macOS-Skill-000000?style=flat-square&logo=apple&logoColor=white)
+
+### github-repo-polish
+
+把"能跑但像半成品"的仓库打磨成"专业人士觉得维护用心"的公开仓库。9 阶段流程 + 4 个自动检查脚本。
+
+**解决的痛点：**
+- README 还是默认的 `# Project Name`,不知道从哪开始
+- 提交历史里 `asdf` / `WIP` / `tmp` 一堆
+- 不小心把 `.env` / API key 提交进 git
+- 想加 CI / Issue 模板,但不知道按什么标准
+
+**9 阶段流程：**
+- 阶段 0:采集"为什么做"(活人感关键,必须本人提供)
+- 阶段 1:隐私审计(gitleaks + git-filter-repo)
+- 阶段 2:仓库骨架(.gitignore / LICENSE / 目录结构)
+- 阶段 3:提交历史整理(conventional commits)
+- 阶段 4:7 段式 README 架构
+- 阶段 5:.github/ 工程化(Issue 模板 + CI)
+- 阶段 6:截图 / GIF / 架构图
+- 阶段 7:个人信息与活人感
+- 阶段 8:发布前综合检查
+
+**安装：**
+```
+帮我安装这个 skill：https://github.com/cstdr/royding-skills/github-repo-polish
+```
+
+**平台支持：**
+
+![Claude Code](https://img.shields.io/badge/Claude_Code-Skill-D97706?style=flat-square&logo=anthropic&logoColor=white)
+![Codex](https://img.shields.io/badge/Codex-Skill-10B981?style=flat-square&logo=openai&logoColor=white)
+![OpenCode](https://img.shields.io/badge/OpenCode-Skill-3B82F6?style=flat-square)
+![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-8B5CF6?style=flat-square)
 
 ---
 
